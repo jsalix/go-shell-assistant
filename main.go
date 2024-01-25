@@ -69,7 +69,7 @@ func main() {
 			os.Exit(1)
 		}
 		input := strings.TrimSuffix(string(stdin), "\n")
-		// TODO is it possible to get the last command too? (i.e. with !!)
+		// TODO is it possible to get the last command too? (i.e. with !!) -- might not grab the right command tbh
 		prompt = llm.GetExplainPrompt(template, string(input), request)
 	case "generate":
 		prompt = llm.GetGeneratePrompt(template, request)
@@ -79,8 +79,8 @@ func main() {
 	params := &api.KoboldParams{
 		MaxContextLength: 4096,
 		MaxLength:        300,
-		Temperature:      1.0,
-		DynaTempRange:    1.0,
+		Temperature:      1.5,
+		DynaTempRange:    1.49,
 		TopP:             1,
 		MinP:             0.1,
 		TopK:             0,
