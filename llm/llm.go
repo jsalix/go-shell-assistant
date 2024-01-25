@@ -41,6 +41,8 @@ func getSystemSeq(template string) string {
 		return "[UNUSED_TOKEN_146]system\n"
 	case "capy":
 		return "USER: "
+	case "deepseek":
+		return "User: "
 	}
 
 	return "### Instruction:\n"
@@ -56,6 +58,8 @@ func getInputSeq(template string) string {
 		return "[UNUSED_TOKEN_145]\n[UNUSED_TOKEN_146]user\n"
 	case "capy":
 		return " ASSISTANT: Got it. Please provide the details.</s> USER: "
+	case "deepseek":
+		return "\n\nAssistant: Got it. Please provide the details.<｜end▁of▁sentence｜>User: "
 	}
 
 	return "\n\n### Input:\n"
@@ -71,6 +75,8 @@ func getResponseSeq(template string) string {
 		return "[UNUSED_TOKEN_145]\n[UNUSED_TOKEN_146]assistant\n"
 	case "capy":
 		return " ASSISTANT:"
+	case "deepseek":
+		return "\n\nAssistant:"
 	}
 
 	return "\n\n### Response:\n"
